@@ -1,5 +1,5 @@
 import { ArrowLeft, Upload, CheckCircle, Phone, AlertCircle } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { uploadDemoPhotos, submitDemoRequest } from '../lib/supabase';
 
 interface DemoRequestProps {
@@ -17,6 +17,10 @@ export default function DemoRequest({ onBack }: DemoRequestProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -61,7 +65,7 @@ export default function DemoRequest({ onBack }: DemoRequestProps) {
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <a href="#" onClick={onBack} className="flex items-center transition-opacity hover:opacity-80">
             <img
-              src="/public/ChatGPT Image Nov 27, 2025, 08_31_34 AM.png"
+              src="/ChatGPT Image Nov 27, 2025, 08_31_34 AM.png"
               alt="TitanMotion Media Logo"
               className="h-16 w-auto"
             />
@@ -286,7 +290,7 @@ export default function DemoRequest({ onBack }: DemoRequestProps) {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex items-center">
                 <img
-                  src="/public/ChatGPT Image Nov 27, 2025, 08_31_34 AM.png"
+                  src="/ChatGPT Image Nov 27, 2025, 08_31_34 AM.png"
                   alt="TitanMotion Media Logo"
                   className="h-12 w-auto"
                 />
